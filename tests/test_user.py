@@ -26,3 +26,4 @@ def test_create_user(client: TestClient,
     assert first_user["username"] == article.username
     assert first_user["password"] == article.password
     assert first_user["email"] == article.email
+

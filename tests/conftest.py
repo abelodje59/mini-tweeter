@@ -22,8 +22,8 @@ def event_loop():
 @pytest.fixture(scope="session")
 def client() -> Generator:
     initializer(
-        db_url=DB_URL,
-        modules=["models"],
+        db_url=settings.SQLITE_URL,
+        modules={"models": [settings.TORTOISE_MODELS]}
     )
 
     with TestClient(app) as test_client:
